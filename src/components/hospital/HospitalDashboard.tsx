@@ -23,6 +23,7 @@ import {
 import { Patient, mockPatients, MedicalReport, mockDoctors } from '../../data/mockPatients';
 import MedicalReportModal from '../patient/MedicalReportModal';
 import ContactForm from '../contact/ContactForm';
+import PatientProfileAccess from '../doctor/PatientProfileAccess';
 
 interface DashboardCard {
   title: string;
@@ -58,6 +59,7 @@ const reportTypes = [
 const tabs = [
   { id: 'patients', label: 'Patients' },
   { id: 'reports', label: 'Medical Reports' },
+  { id: 'profile-access', label: 'Patient Profile Access' },
   { id: 'settings', label: 'Settings' },
   { id: 'contact', label: 'Contact Us' },
 ];
@@ -396,6 +398,12 @@ export default function HospitalDashboard() {
                 </tbody>
               </table>
             </div>
+          </div>
+        )}
+
+        {activeTab === 'profile-access' && (
+          <div className="bg-white rounded-lg shadow-lg">
+            <PatientProfileAccess />
           </div>
         )}
 
